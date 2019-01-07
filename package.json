@@ -1,0 +1,21 @@
+{
+  "name": "test-task-deco",
+  "version": "1.0.0",
+  "description": "Test task for Deco",
+  "scripts": {
+    "gulp": "gulp"
+  },
+  "author": "Roman Zots",
+  "private": true,
+  "dependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp.spritesmith": "^6.9.0"
+  },
+  "browserslist": [
+    "last 4 version",
+    "not dead"
+  ]
+}

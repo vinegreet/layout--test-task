@@ -1,0 +1,11 @@
+// .btn {
+// 	@extend %btn;
+// }
+
+.icon {
+	display: inline-block;
+}
+
+@include sprites($spritesheet-sprites);
+
+

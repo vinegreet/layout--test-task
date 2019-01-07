@@ -1,0 +1,215 @@
+/*!
+ * -------------------------------------
+ * Theme Name: ______
+ * Theme URI: http://decollete.com.ua/
+ * Author: Decollete Team
+ * Author URI: http://decollete.com.ua/
+ * Description: Custom wp theme special for _____
+ * Version: 1.0
+ * -------------------------------------
+ */
+@font-face {
+  font-family: "GothaPro";
+  src: url("assets/fonts/GothaPro.woff2") format("woff2"), url("assets/fonts/GothaPro.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "GothaPro";
+  src: url("assets/fonts/GothaPro-Medium.woff2") format("woff2"), url("assets/fonts/GothaPro-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal; }
+
+@font-face {
+  font-family: "GothaPro";
+  src: url("assets/fonts/GothaPro-Bold.woff2") format("woff2"), url("assets/fonts/GothaPro-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal; }
+
+@font-face {
+  font-family: "GothaPro";
+  src: url("assets/fonts/GothaPro-Black.woff2") format("woff2"), url("assets/fonts/GothaPro-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal; }
+
+@font-face {
+  font-family: "BanderPro";
+  src: url("assets/fonts/BanderPro-Bold.woff2") format("woff2"), url("assets/fonts/BanderPro-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  box-sizing: border-box; }
+
+html {
+  line-height: 1; }
+
+body {
+  font-family: "GothaPro", sans-serif;
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+q, blockquote {
+  quotes: none; }
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: none; }
+
+a {
+  text-decoration: none; }
+
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+  display: block;
+  box-sizing: border-box; }
+
+:focus {
+  outline: none; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal; }
+
+.cf:before, .cf:after {
+  content: '.';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  font-size: 0;
+  line-height: 0;
+  width: 0;
+  height: 0; }
+
+.cf:after {
+  clear: both; }
+
+.icon {
+  display: inline-block; }
+
+.services-accompaniment {
+  background-image: url(assets/img/sprite.png);
+  background-position: -84px 0px;
+  width: 40px;
+  height: 39px; }
+
+.services-documentation {
+  background-image: url(assets/img/sprite.png);
+  background-position: 0px -42px;
+  width: 42px;
+  height: 42px; }
+
+.services-optimization {
+  background-image: url(assets/img/sprite.png);
+  background-position: 0px 0px;
+  width: 42px;
+  height: 42px; }
+
+.services-order {
+  background-image: url(assets/img/sprite.png);
+  background-position: -42px -42px;
+  width: 40px;
+  height: 41px; }
+
+.sn-footer-facebook {
+  background-image: url(assets/img/sprite.png);
+  background-position: -113px -84px;
+  width: 5px;
+  height: 12px; }
+
+.sn-footer-linkedin {
+  background-image: url(assets/img/sprite.png);
+  background-position: -101px -84px;
+  width: 12px;
+  height: 13px; }
+
+.sn-footer-twitter {
+  background-image: url(assets/img/sprite.png);
+  background-position: -107px -64px;
+  width: 15px;
+  height: 11px; }
+
+.ui-arrowDown {
+  background-image: url(assets/img/sprite.png);
+  background-position: 0px -84px;
+  width: 22px;
+  height: 22px; }
+
+.ui-arrowUp {
+  background-image: url(assets/img/sprite.png);
+  background-position: -22px -84px;
+  width: 22px;
+  height: 22px; }
+
+.ui-pauseBtn-purple {
+  background-image: url(assets/img/sprite.png);
+  background-position: -109px -39px;
+  width: 12px;
+  height: 20px; }
+
+.ui-playBtn-darkGray {
+  background-image: url(assets/img/sprite.png);
+  background-position: -42px 0px;
+  width: 42px;
+  height: 42px; }
+
+.ui-playBtn-purple {
+  background-image: url(assets/img/sprite.png);
+  background-position: -44px -84px;
+  width: 17px;
+  height: 21px; }
+
+.ui-quotes-gray {
+  background-image: url(assets/img/sprite.png);
+  background-position: -61px -84px;
+  width: 20px;
+  height: 15px; }
+
+.ui-quotes-red {
+  background-image: url(assets/img/sprite.png);
+  background-position: -81px -84px;
+  width: 20px;
+  height: 15px; }
+
+.ui-reload {
+  background-image: url(assets/img/sprite.png);
+  background-position: -84px -64px;
+  width: 23px;
+  height: 20px; }
+
+.ui-youtube {
+  background-image: url(assets/img/sprite.png);
+  background-position: -84px -39px;
+  width: 25px;
+  height: 25px; }

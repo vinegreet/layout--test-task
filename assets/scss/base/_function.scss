@@ -1,0 +1,10 @@
+//	Functions
+
+@function basecolor($opacity){
+	@return rgba(39,21,15,$opacity);
+}
+
+@function path($src, $dir: img) {
+	$src: unquote($src);
+	@return url(unquote("..")/$dir/$src);
+}
