@@ -1,1 +1,59 @@
+html {
+	height: 100%;
+	font-size: 16px;
+	font-size: 3.9vw;
+}
 
+body {
+	height: 100%;
+}
+
+strong {
+	font-weight: bold;
+}
+
+.divider {
+	width: 2.7rem;
+  height: 2px;
+	margin: 1.7rem 0;
+	background-color: $purple;
+}
+
+.main {
+	margin-top: $headerHeight;
+}
+
+.jumbo-article {
+	padding: 3rem;
+}
+
+.jumbo-title {
+	@extend %title;
+	width: 23rem;
+}
+
+.jumbo-text {
+	@extend %text;
+	width: 20rem;
+	padding: .1rem 0;
+	p {	margin-bottom: 1.5em;	}
+}
+
+.jumbo-btn {
+	@extend %purpleButton;
+	margin-top: 2rem;
+	.icon {
+		margin-right: 1rem;
+	}
+}
+
+.jumbo-playBtn {
+	@include flex();
+	width: $jumbo-playBtn-size;
+	height: $jumbo-playBtn-size;
+	position: absolute;
+	top: 19rem;
+	left: calc(50% - (#{$jumbo-playBtn-size} / 2));
+	background-color: $gray;
+	border-radius: 50%;
+}

@@ -17,8 +17,8 @@ time, mark, audio, video {
   font: inherit;
   font-size: 100%;
   vertical-align: baseline;
-  // @include box-sizing(border-box);
   box-sizing: border-box;
+  color: $dark-gray;
 }
 
 html {

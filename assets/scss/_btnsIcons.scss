@@ -2,6 +2,10 @@
 // 	@extend %btn;
 // }
 
+.btn {
+	@include button-reset;
+}
+
 .icon {
 	display: inline-block;
 }

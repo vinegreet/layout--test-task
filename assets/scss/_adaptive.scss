@@ -1,0 +1,83 @@
+@media (min-width: 768px) {
+  html {
+    // font-size: calc(0.8vh + 0.45vw);
+    // font-size: calc(0.9vh + 0.51vw);
+    font-size: calc(0.65vh + 0.4vw);
+    font-size: 13.777px;
+  }
+
+  .header-inner {
+    padding: 2em;
+    padding: 39px 53px 0 104px;
+  }
+
+  .header-hamburgerBtn {
+    display: none;
+  }
+
+  .header-nav {
+    @include flex(flex-end);
+    flex: 1;
+  }
+
+  .header-menu {
+    @include flex(space-around);
+    margin-right: 8.1rem;
+    &--desk { display: block; }
+    &--mob { display: none; }
+  }
+
+  .header-menuItem {
+    display: inline-block;
+    margin-left: 1.5rem;
+    font-size: .8rem;
+    font-weight: 600;
+  }
+
+  .jumbo-inner {
+    @include flex(space-between, stretch);
+  }
+
+  .jumbo-article {
+    padding: 5.15rem 3.5rem 4rem 7.9rem;
+    width: 50%;
+    z-index: 101;
+  }
+
+  .jumbo-text {
+    width: 30rem;
+  }
+  
+}
+
+@media (min-width: 910px) {
+
+  .jumbo-photo {
+    width: 30rem;
+    // margin-right: 2.7rem;
+    margin-right: 7.1rem;
+    z-index: 100;
+    background: {
+      image: url('assets/photo/jumbotron-bg_.jpg');
+      size: cover;
+    }
+  }
+
+}
+
+@media (min-width: 1280px) {
+
+  .header-inner,
+  .jumbo-inner {
+    max-width: 1140px;
+    // max-width: 1680px;
+    // max-width: 1700px;
+    width: 95%;
+    margin: 0 auto;
+    background-color: $jumbotronWhite;
+  }
+
+  .header-inner {
+  }
+
+}

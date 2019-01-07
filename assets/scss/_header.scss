@@ -1,0 +1,112 @@
+.header {
+	width: 100%;
+  height: $headerHeight;
+	position: fixed;
+	top: 0;
+	left: 0;
+  background-color: $jumbotronWhite;
+  z-index: 120;
+  &--shadow {
+    box-shadow: 0 0 10px 0 rgb(165, 164, 164);
+  }
+}
+
+.header-inner {
+  height: $headerHeight;
+	background-color: $jumbotronWhite;
+	padding: 1em;
+  @include flex(space-between);
+  z-index: 102;
+  position: relative;
+}
+
+.header-logoBtn {
+	height: 100%;
+}
+
+.header-hamburgerBtn {
+	width: 70px;
+	height: 70px;
+}
+
+.header-menuBtn {
+  text-transform: uppercase;
+}
+
+.header-menu--desk {
+	display: none;
+}
+
+.header-menuDropdown {
+  z-index: 101;
+  margin-top: -200px;
+  transition: all $duration * 2 ease;
+  &--open {
+    margin-top: 0;
+  }
+}
+
+.header-menu--mob {
+  background-color: $jumbotronWhite;
+  border: {
+    top: 1px solid $gray;
+    bottom: 1px solid $gray;
+  }
+	.header-menuItem {
+    padding: 1em;
+    text-align: center;
+    border-bottom: 1px solid $gray;
+    &:last-child {
+      border: none;
+    }
+  }
+}
+
+.header-menuItem {
+  &:hover,
+  &--active {
+    .header-menuBtn {
+      color: $purple;
+    }
+  }
+}
+
+.header-langToggle {
+  width: 64px;
+  height: 30px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid $gray;
+  border-radius: 60px;
+  cursor: pointer;
+  transition: all $duration ease;
+  // margin-left: 10%;
+  &--right {
+    .header-toggleCircle {
+      left: 38px;
+    }
+  }
+}
+
+.header-toggleCircle {
+  height: 18px;
+  width: 18px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  background-color: $gray;
+  border-radius: 50%;
+  text-align: center;
+  text-decoration: none;
+  transition: all $duration ease;
+  &:before {
+    @extend %toggle-before-after;
+    content: 'UA';
+    right: 25px;
+  }
+  &:after {
+    @extend %toggle-before-after;
+    content: 'RU';
+    right: -27px;
+  }
+}
