@@ -6,6 +6,12 @@
     font-size: 13.777px;
   }
 
+  .header-inner,
+  .jumbo-inner,
+  .services-innerContainer {
+    width: 100%;
+  }
+
   .header-inner {
     padding: 2em;
     padding: 39px 53px 0 104px;
@@ -21,7 +27,7 @@
   }
 
   .header-menu {
-    @include flex(space-around);
+    @include flex(space-around, center, row, nowrap);
     margin-right: 8.1rem;
     &--desk { display: block; }
     &--mob { display: none; }
@@ -33,6 +39,8 @@
     font-size: .8rem;
     font-weight: 600;
   }
+
+  /* ====================== JUMBOTRON ====================== */
 
   .jumbo-inner {
     @include flex(space-between, stretch);
@@ -46,6 +54,34 @@
 
   .jumbo-text {
     width: 30rem;
+  }
+
+  .jumbo-btn {
+    margin-left: 0;
+  }
+
+  /* ====================== SERVICES ====================== */
+  
+  .services-subtitle {
+    width: 56%;
+  }
+
+  .services-item {
+    width: 50%;
+    height: 18.2rem;
+    padding: 3rem 4rem 2rem 2rem;
+    &:before {
+      position: absolute;
+      top: 4rem;
+      margin: 0;
+    }
+  }
+
+  .services-contentWrapper {
+    position: absolute;
+    top: 4.5rem;
+    left: 7.5rem;
+    width: 68%;
   }
   
 }
@@ -69,15 +105,27 @@
 
   .header-inner,
   .jumbo-inner {
-    max-width: 1140px;
-    // max-width: 1680px;
-    // max-width: 1700px;
-    width: 95%;
-    margin: 0 auto;
+    @extend %sectionInner;
     background-color: $jumbotronWhite;
   }
 
-  .header-inner {
+  .services-innerContainer,
+  .reviews-innerContainer {
+    @extend %sectionInner;
+  }
+
+  .services-item {
+    padding: 3rem 4rem 2rem 7.9rem;
+  }
+  
+  .services-contentWrapper {
+    left: 12.6rem;
+    width: 59%;
+  }
+  
+  .services-subtitle {
+    // width: 38.6rem;
+    width: 33%;
   }
 
 }

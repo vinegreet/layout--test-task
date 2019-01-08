@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="robots" content="noindex" />
 	<title></title>
 	<link rel="stylesheet" href="style.css">
 </head>
@@ -29,11 +30,11 @@
 					<li class="header-menuItem"><button class="header-menuBtn btn" data-scroll-to="contacts">Контакты</button></li>
 				</ul>
 			</nav>
-			<div class="header-lang">
+			<button class="header-lang btn">
 				<div class="header-langToggle">
 					<div class="header-toggleCircle"></div>
 				</div>
-			</div>
+			</button>
 		</div>
 		<div class="header-menuDropdown">
 			<ul class="header-menu header-menu--mob">
@@ -45,20 +46,23 @@
 	</header>
 
 	<main class="main">
+
+		<!-- =================== JUMBOTRON =================== -->
+		
 		<section class="jumbo">
 			<div class="jumbo-slider">
 				<div class="jumbo-inner">
 					<div class="jumbo-article">
 						<div class="jumbo-title">Правовое сопровождение малого ИТ-бизнеса</div>
-						<div class="divider"></div>
+						<div class="jumbo-divider"></div>
 						<div class="jumbo-text">
 							<p>Зачастую интернет-проекты, разработчики, маркетологи, дизайнеры, стартаперы и другие IT-специалисты не уделяют должного внимания правовым аспектам своей деятельности.</p>
 							<p>Но <strong>документы должны быть в порядке</strong>, и мы в этом поможем.</p>
 						</div>
-						<div class="jumbo-btn">
+						<button class="jumbo-btn btn" data-scroll-to="services">
 							<i class="icon ui-arrowDown"></i>
 							Услуги и цены
-						</div>
+						</button>
 					</div>
 					<div class="jumbo-photo"></div>
 				</div>
@@ -68,91 +72,115 @@
 			</div>
 		</section>
 
+		<!-- =================== SERVICES =================== -->
+
 		<section class="services">
-			<!-- .services-header>h3.services-title+.divider+.services-subtitle^.services-container>(.services-item>.services-leftIconWrapper>i^.services-contentWrapper>.services-contentTitle+.services-contentText^.services-rightIconWrapper>i.services-info)*4 -->
 			<div class="services-header">
-				<h3 class="services-title"></h3>
+				<h3 class="services-title">Услуги и цены</h3>
 				<div class="divider"></div>
-				<div class="services-subtitle"></div>
+				<div class="services-subtitle"><strong>Pravo agency</strong> выполняют роль юристов-аутсорсеров, надежно прикрывая 
+					правовой тыл вашей деятельности.</div>
 			</div>
 			<div class="services-innerContainer">
-				<div class="services-item">
-					<div class="services-leftIconWrapper"><i></i></div>
+				<button class="services-item btn">
 					<div class="services-contentWrapper">
-						<div class="services-contentTitle"></div>
-						<div class="services-contentText"></div>
+						<div class="services-contentTitleWrapper">
+							<h3 class="services-contentTitle">Наведение порядка <br /> в делах</h3>
+						</div>
+						<div class="services-contentText">
+							Аудит документов и платежей на предмет:
+							<ul>
+								<li>соблюдения необходимых формальностей и процедур,</li>
+								<li>наличия всех оригиналов договоров, актов,</li>
+								<li>легализация зависших платежей.</li>
+							</ul>
+						</div>
 					</div>
-					<div class="services-rightIconWrapper"><i class="services-info"></i></div>
-				</div>
-				<div class="services-item">
-					<div class="services-leftIconWrapper"><i></i></div>
+				</button>
+				<button class="services-item btn">
 					<div class="services-contentWrapper">
-						<div class="services-contentTitle"></div>
-						<div class="services-contentText"></div>
+						<div class="services-contentTitleWrapper">
+							<h3 class="services-contentTitle">Оптимизация <br /> договорных отношений</h3>
+						</div>
+						<div class="services-contentText">
+							<ul>
+								<li>Доработка, латание дыр и улучшение условий основных типовых договоров вашей компании</li>
+								<li>Оформление сотрудников на оптимальных условиях ведения деятельности и налогообложения</li>
+								<li>Составление договоров, соглашений о конфиденциальности, публичных офферт</li>
+							</ul>
+						</div>
 					</div>
-					<div class="services-rightIconWrapper"><i class="services-info"></i></div>
-				</div>
-				<div class="services-item">
-					<div class="services-leftIconWrapper"><i></i></div>
+				</button>
+				<button class="services-item btn">
 					<div class="services-contentWrapper">
-						<div class="services-contentTitle"></div>
-						<div class="services-contentText"></div>
+						<div class="services-contentTitleWrapper">
+							<h3 class="services-contentTitle">Правовое сопровождение деятельности (юрист-аутсорсер)</h3>
+						</div>
+						<div class="services-contentText">
+							<ul>
+								<li>Участие в заключении договоров: минимизация рисков, усиление ваших позиций</li>
+								<li>Юридическая консультация</li>
+								<li>Дайджест предпринимательских ИТ-новостей с разъяснениями</li>
+								<li>Представительство интересов в судах</li>
+							</ul>
+						</div>
 					</div>
-					<div class="services-rightIconWrapper"><i class="services-info"></i></div>
-				</div>
-				<div class="services-item">
-					<div class="services-leftIconWrapper"><i></i></div>
+				</button>
+				<button class="services-item btn">
 					<div class="services-contentWrapper">
-						<div class="services-contentTitle"></div>
-						<div class="services-contentText"></div>
+						<div class="services-contentTitleWrapper">
+							<h3 class="services-contentTitle">Разработка договоров <br /> и другой документации</h3>
+						</div>
+						<div class="services-contentText">
+							<p>К сожалению, конфликты бывают в любой сфере. Если дело близится к суду или уже дошло до него, мы поможем отстоять ваши права и интересы.</p>
+						</div>
 					</div>
-					<div class="services-rightIconWrapper"><i class="services-info"></i></div>
-				</div>
+				</button>
 			</div>
 		</section>
 
 		<section class="reviews">
-			<!-- .reviews-header>.reviews-title+.divider+.reviews-subtitle^.reviews-innerContainer>(.reviews-item>.reviews-iconWrapper+.reviews-content+.reviews-user>.reviews-name+.reviews-job>.reviews-jobPosition+a.reviews-workplaceLink)*3 -->
 			<div class="reviews-header">
-				<div class="reviews-title"></div>
+				<div class="reviews-title">Отзывы</div>
 				<div class="divider"></div>
-				<div class="reviews-subtitle"></div>
+				<div class="reviews-subtitle">Мнение наших клиентов <strong>делает мир и нас лучше :)</strong></div>
 			</div>
 			<div class="reviews-innerContainer">
 				<div class="reviews-item">
-					<div class="reviews-iconWrapper"></div>
-					<div class="reviews-content"></div>
+					<div class="reviews-content">Главная тема для меня – любовь. Мы все хотим ее, но не знаем как получить, поэтому все, что мы делаем, — это всего лишь попытки найти счастье.</div>
 					<div class="reviews-user">
-						<div class="reviews-name"></div>
+						<div class="reviews-name">Алексей Фёдоров</div>
 						<div class="reviews-job">
-							<div class="reviews-jobPosition"></div>
-							<a href="" class="reviews-workplaceLink"></a>
+							<div class="reviews-jobPosition">CEO</div>
+							<a href="https://deco.agency/" class="reviews-workplaceLink" target="_blank">deco.agency</a>
 						</div>
 					</div>
 				</div>
 				<div class="reviews-item">
-					<div class="reviews-iconWrapper"></div>
-					<div class="reviews-content"></div>
+					<div class="reviews-content">Главная тема для меня – любовь. Мы все хотим ее, но не знаем как получить, поэтому все, что мы делаем, — это всего лишь попытки найти счастье.</div>
 					<div class="reviews-user">
-						<div class="reviews-name"></div>
+						<div class="reviews-name">Артур Оруджалиев</div>
 						<div class="reviews-job">
-							<div class="reviews-jobPosition"></div>
-							<a href="" class="reviews-workplaceLink"></a>
+							<div class="reviews-jobPosition">CEO</div>
+							<a href="https://ain.ua/" class="reviews-workplaceLink" target="_blank" rel="nofollow">AIN.ua</a>
 						</div>
 					</div>
 				</div>
 				<div class="reviews-item">
-					<div class="reviews-iconWrapper"></div>
 					<div class="reviews-content"></div>
 					<div class="reviews-user">
-						<div class="reviews-name"></div>
+						<div class="reviews-name">Григорий Маленко</div>
 						<div class="reviews-job">
-							<div class="reviews-jobPosition"></div>
-							<a href="" class="reviews-workplaceLink"></a>
+							<div class="reviews-jobPosition">CEO</div>
+							<a href="https://serm.ua/" class="reviews-workplaceLink" target="_blank" rel="nofollow">SERM.ua</a>
 						</div>
 					</div>
 				</div>
 			</div>
+			<button class="reviews-loadMore btn">
+				<i class="icon ui-reload"></i>
+				Загрузить еще
+			</button>
 		</section>
 		<section class="contacts"></section>
 	</main>

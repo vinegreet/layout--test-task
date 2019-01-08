@@ -46,23 +46,10 @@
 	column-gap:           $gap;
 }
 
-@mixin flex ($justify: center, $align: center, $direction: row){
+@mixin flex ($justify: center, $align: center, $direction: null, $wrap: null) {
   display: flex;
   justify-content: $justify;
   align-items: $align;
-  flex-direction: $direction;
-}
-
-@mixin button-reset {
-  padding: 0;
-  border: none;
-  font: inherit;
-  color: inherit;
-	cursor: pointer;
-	background-color: transparent;
-
-  &:focus,
-	&:active {
-    outline: none;
-  }
+	flex-direction: $direction;
+	flex-wrap: $wrap;
 }

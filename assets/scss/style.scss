@@ -19,15 +19,15 @@
 
 
 // Base Style
-@import "base/_mixins";		// миксины
-@import "base/_fonts";		// шрифты
-@import "base/_variables";	// переменные
+@import "base/sprite";		// спрайт
+@import "base/variables";	// переменные
+@import "base/mixins";		// миксины
+@import "base/fonts";		// шрифты
+@import "base/reset";		//
 @import "base/extend";		// расширения
-@import "base/_function";	// функции
-@import "base/_sprite";		// спрайт
-@import "base/_reset";		//
-// @import "base/_grid";		// сетка
-@import "base/_hamburger";		// иконка меню - гамбургер
+@import "base/function";	// функции
+// @import "base/grid";		// сетка
+@import "base/hamburger";		// иконка меню - гамбургер
 
 
 //	Style

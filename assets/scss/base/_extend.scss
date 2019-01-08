@@ -6,8 +6,40 @@
 	line-height: 1.2;
 }
 
+%sectionHeader {
+  padding: 3.7rem;
+	@include flex(center, center, column);
+}
+
+%sectionTitle {
+	font: {
+		size: 1.9rem;
+		weight: 600;
+	}
+	text-transform: uppercase;
+}
+
+%sectionSubtitle {
+  line-height: 1.3;
+	text-align: center;
+}
+
 %text {
 	line-height: 1.6;
+}
+
+%btn {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+	cursor: pointer;
+	background-color: transparent;
+
+  &:focus,
+	&:active {
+    outline: none;
+	}
 }
 
 %toggle-before-after {
@@ -31,4 +63,24 @@
   height: 3.4rem;
   font-size: .7rem;
 	text-transform: uppercase;
+}
+
+%divider,
+.divider {
+	width: 2.7rem;
+  height: 2px;
+	background-color: $purple;
+	margin: 1rem 0;
+}
+
+@media (min-width: 1280px) {
+
+	%sectionInner {
+		max-width: 1140px;
+		// max-width: 1680px;
+		// max-width: 1700px;
+		// width: 95%;
+		margin: 0 auto;
+	}
+
 }

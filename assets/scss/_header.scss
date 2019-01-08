@@ -8,6 +8,7 @@
   z-index: 120;
   &--shadow {
     box-shadow: 0 0 10px 0 rgb(165, 164, 164);
+    border-bottom: 5px solid $jumbotronWhite;
   }
 }
 

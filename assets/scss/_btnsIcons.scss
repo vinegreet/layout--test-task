@@ -1,9 +1,6 @@
-// .btn {
-// 	@extend %btn;
-// }
-
+// button
 .btn {
-	@include button-reset;
+	@extend %btn;
 }
 
 .icon {
