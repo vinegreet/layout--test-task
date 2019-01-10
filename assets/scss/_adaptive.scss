@@ -127,6 +127,76 @@
   .reviews-loadMore {
     margin-top: 3.9rem;
   }
+
+  /* ====================== CONTACT ====================== */
+  
+  .contact-header {
+    padding: 3.7rem 0 0;
+  }
+
+  .contact-innerContainer {
+    padding: 2rem 14.5rem;
+    vertical-align: middle;
+  }
+
+  .contact-form {
+    @include flex(space-between, flex-start, null, wrap);
+    padding-left: .1rem;
+  }
+
+  .contact-leftColumn {
+    width: 47.4%;
+    padding-top: 0.15rem;
+  }
+  
+  .contact-input {
+    font-size: 0.8rem;
+    height: 2.1rem;
+    border-width: 1px;
+  }
+
+  .contact-dropdown {
+    margin-top: 2.1rem;
+  }
+
+  .contact-dropdownHeader {
+    justify-content: space-between;
+    height: 3.4rem;
+    padding: 1.4rem;
+    @include contactText();
+  }
+
+  .contact-multiselect {
+    padding: 1.3rem 1.4rem;
+    font-size: 0.85rem;
+  }
+  
+  .contact-select {
+    width: 1.3rem;
+    line-height: 2.4;
+  }
+
+  .contact-rightColumn {
+    width: 49%;
+    padding: 0 0.05rem 0 0.8rem;
+  }
+
+  .contact-textareaLabel {
+    @include contactText();
+    text-align: left;
+    margin-bottom: 0.6rem;
+  }
+
+  .contact-textarea {
+    height: 16.8rem;
+    padding: 1rem;
+    box-sizing: inherit;
+  }
+
+  .contact-buttonWrapper {
+    width: 100%;
+    margin: 2.5rem 0;
+  }
   
 }
 
@@ -180,7 +250,8 @@
   .header-inner,
   .jumbo-inner,
   .services-innerContainer,
-  .reviews-innerContainer {
+  .reviews-innerContainer,
+  .contact-innerContainer {
     @extend %sectionInner;
   }
 

@@ -139,6 +139,8 @@
 			</div>
 		</section>
 
+		<!-- =================== REVIEWS =================== -->
+
 		<section class="reviews">
 			<div class="reviews-header">
 				<h3 class="reviews-title">Отзывы</h3>
@@ -193,8 +195,9 @@
 			</button>
 		</section>
 
+		<!-- =================== CONTACT =================== -->
+
 		<section class="contact">
-				<!-- .contact-header>.contact-title+.divider^.contact-innerContainer>form.contact-form>.contact-leftColumn>(input.contact-input)*4+.contact-dropdown>.contact-dropdownHeader+dl.contact-multiselect>(dt.contact-select>input.contact-selectInput^dd.contact-selectDefinition>button.contact-selectDefinitionBtn)*4^^.contact-rightColumn>span.contact-textareaLabel+textarea.contact-textarea^.contact-buttonWrapper>button.contact-submitBtn -->
 			<div class="contact-header">
 				<h3 class="contact-title">Запрос на услуги</h3>
 				<div class="divider"></div>
@@ -211,25 +214,25 @@
 							<dl class="contact-multiselect">
 								<dt class="contact-select"><input type="checkbox" class="contact-selectInput" name="order"></dt>
 								<dd class="contact-selectDefinition">
-									<button class="contact-selectDefinitionBtn btn">Наведение порядка в делах</button>
+									<button class="contact-selectDefinitionBtn btn" data-name="order">Наведение порядка в делах</button>
 								</dd>
 								<dt class="contact-select"><input type="checkbox" class="contact-selectInput" name="accompaniment"></dt>
 								<dd class="contact-selectDefinition">
-									<button class="contact-selectDefinitionBtn btn">Правовое сопровождение деятельности</button>
+									<button class="contact-selectDefinitionBtn btn" data-name="accompaniment">Правовое сопровождение деятельности</button>
 								</dd>
 								<dt class="contact-select"><input type="checkbox" class="contact-selectInput" name="optimization"></dt>
 								<dd class="contact-selectDefinition">
-									<button class="contact-selectDefinitionBtn btn">Оптимизация договорных отношений</button>
+									<button class="contact-selectDefinitionBtn btn" data-name="optimization">Оптимизация договорных отношений</button>
 								</dd>
 								<dt class="contact-select"><input type="checkbox" class="contact-selectInput" name="contracts"></dt>
 								<dd class="contact-selectDefinition">
-									<button class="contact-selectDefinitionBtn btn">Разработка договоров</button>
+									<button class="contact-selectDefinitionBtn btn" data-name="contracts">Разработка договоров</button>
 								</dd>
 							</dl>
 						</div>
 					</div>
 					<div class="contact-rightColumn">
-						<span class="contact-textareaLabel">Дополнительная информация</span>
+						<p class="contact-textareaLabel">Дополнительная информация</p>
 						<textarea name="additionaltext" id="" cols="30" rows="10" class="contact-textarea" placeholder="Введите текст..."></textarea>
 					</div>
 					<div class="contact-buttonWrapper"><button type="submit" class="contact-submitBtn btn" name="submit">Отправить</button></div>
@@ -237,6 +240,8 @@
 			</div>
 		</section>
 	</main>
+
+	<!-- =================== FOOTER =================== -->
 	
 	<footer class="footer"></footer>
 

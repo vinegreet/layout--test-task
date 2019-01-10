@@ -14,6 +14,16 @@ jQuery(document).ready(function($){
     $(this).remove();
   });
 
+  $('.contact-select').click(function(e) {
+    $(this).toggleClass('contact-select--checked');
+    $(this).next('.contact-selectDefinition').toggleClass('contact-selectDefinition--checked');
+  });
+  
+  $('.contact-selectDefinition').click(function(e) {
+    $(this).toggleClass('contact-selectDefinition--checked');
+    $(this).prev('.contact-select').toggleClass('contact-select--checked');
+  });
+
   let ticking;
 
   $(window).on('scroll', function(e) {

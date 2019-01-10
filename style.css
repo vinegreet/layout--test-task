@@ -116,7 +116,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   line-height: 1.2; }
 
-.services-header, .reviews-header {
+.services-header, .reviews-header, .contact-header {
   padding: 3.7rem;
   display: -webkit-box;
   display: flex;
@@ -128,7 +128,7 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-direction: normal;
           flex-direction: column; }
 
-.services-title, .reviews-title {
+.services-title, .reviews-title, .contact-title {
   font-size: 1.9rem;
   font-weight: 600;
   text-transform: uppercase; }
@@ -160,21 +160,22 @@ h1, h2, h3, h4, h5, h6 {
   color: #a70c5d;
   -webkit-font-smoothing: antialiased; }
 
-.jumbo-btn {
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-          align-items: center;
+.jumbo-btn, .contact-submitBtn {
   background-color: #a70c5d;
   color: #fff;
+  border: 2px solid #a70c5d;
   border-radius: 4rem;
   padding: 1rem;
-  width: 12.1rem;
-  height: 3.4rem;
+  width: 12rem;
+  height: 3.3rem;
   font-size: .7rem;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease; }
+  .jumbo-btn:hover, .contact-submitBtn:hover {
+    background-color: transparent;
+    color: #3f4147;
+    font-weight: bold; }
 
 .jumbo-divider,
 .divider {
@@ -187,7 +188,8 @@ h1, h2, h3, h4, h5, h6 {
   .header-inner,
   .jumbo-inner,
   .services-innerContainer,
-  .reviews-innerContainer {
+  .reviews-innerContainer,
+  .contact-innerContainer {
     max-width: 1140px;
     margin: 0 auto; } }
 
@@ -426,6 +428,12 @@ strong {
     margin-bottom: 1.5em; }
 
 .jumbo-btn {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+          align-items: center;
   margin: 2rem auto 0; }
   .jumbo-btn .icon {
     margin-right: 1rem; }
@@ -530,12 +538,16 @@ strong {
       width: .2rem;
       height: .2rem;
       position: absolute;
+      top: 0.4rem;
       left: -1.7rem;
-      top: .4rem;
       border: 2px solid #a70c5d;
-      border-radius: 50%; }
+      border-radius: 50%;
+      vertical-align: middle; }
 
 /* ====================== REVIEWS ====================== */
+.reviews {
+  margin-bottom: 3.5rem; }
+
 .reviews-innerContainer {
   display: -webkit-box;
   display: flex;
@@ -571,6 +583,25 @@ strong {
   margin: 1rem 0 0 2rem;
   border-radius: 50%; }
 
+.reviews-videoContainer {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  position: relative; }
+  .reviews-videoContainer:before {
+    content: '';
+    display: block;
+    background-image: url(assets/img/sprite.png);
+    background-position: -42px 0px;
+    width: 42px;
+    height: 42px;
+    position: absolute;
+    top: 5rem;
+    left: 9rem; }
+
 .reviews-user {
   margin: 1.5rem 0 0;
   float: right;
@@ -596,12 +627,114 @@ strong {
 
 .reviews-loadMore {
   display: block;
-  width: 10rem;
+  width: 9rem;
   margin: 1rem auto;
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+          align-items: center;
+  font-size: 0.7rem;
+  font-weight: 900;
+  text-transform: uppercase; }
+
+/* ====================== CONTACT ====================== */
+.contact-header {
+  padding: 2.5rem 1.5rem; }
+
+.contact-innerContainer {
+  padding: 2rem; }
+
+.contact-input {
+  width: 100%;
+  margin-bottom: 1rem;
+  font: 700 0.9rem/1 'GothaPro', sans-serif;
+  text-transform: uppercase;
+  border-color: #dfdfe2;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  background-image: none;
+  background-color: transparent;
+  box-shadow: none;
+  outline: none; }
+  .contact-input::-webkit-input-placeholder {
+    font-weight: 500; }
+  .contact-input::-moz-placeholder {
+    font-weight: 500; }
+  .contact-input:-ms-input-placeholder {
+    font-weight: 500; }
+  .contact-input:-moz-placeholder {
+    font-weight: 500; }
+
+.contact-dropdown {
+  margin-top: 1rem;
+  border: 1px solid #dfdfe2; }
+
+.contact-dropdownHeader {
+  height: 2.5rem;
+  border-bottom: 1px solid #dfdfe2;
+  border-collapse: collapse;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center; }
+  .contact-dropdownHeader:after {
+    content: '';
+    display: block;
+    background-image: url(assets/img/sprite.png);
+    background-position: -77px -84px;
+    width: 22px;
+    height: 22px;
+    margin-left: 0.5rem; }
+
+.contact-multiselect {
+  padding: 1rem 0; }
+
+.contact-select {
+  display: inline-block;
+  width: 5%; }
+  .contact-select:before {
+    content: '';
+    display: inline-block;
+    width: .2rem;
+    height: .2rem;
+    border: 2px solid #dfdfe2;
+    border-radius: 50%;
+    vertical-align: middle; }
+  .contact-select--checked:before {
+    border-color: #a70c5d; }
+
+.contact-selectInput {
+  display: none; }
+
+.contact-selectDefinition {
+  display: inline-block;
+  width: 90%; }
+  .contact-selectDefinition--checked {
+    color: #a70c5d; }
+
+.contact-selectDefinitionBtn {
+  text-align: left; }
+
+.contact-textareaLabel {
+  text-align: center;
+  margin: 1rem 0; }
+
+.contact-textarea {
+  width: 100%;
+  resize: none;
+  border-color: #dfdfe2;
+  font-family: 'GothaPro'; }
+
+.contact-buttonWrapper {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
           align-items: center; }
 
@@ -804,7 +937,61 @@ strong {
     margin-top: .7rem;
     font-size: 0.9rem; }
   .reviews-loadMore {
-    margin-top: 3.9rem; } }
+    margin-top: 3.9rem; }
+  /* ====================== CONTACT ====================== */
+  .contact-header {
+    padding: 3.7rem 0 0; }
+  .contact-innerContainer {
+    padding: 2rem 14.5rem;
+    vertical-align: middle; }
+  .contact-form {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+            align-items: flex-start;
+    flex-wrap: wrap;
+    padding-left: .1rem; }
+  .contact-leftColumn {
+    width: 47.4%;
+    padding-top: 0.15rem; }
+  .contact-input {
+    font-size: 0.8rem;
+    height: 2.1rem;
+    border-width: 1px; }
+  .contact-dropdown {
+    margin-top: 2.1rem; }
+  .contact-dropdownHeader {
+    -webkit-box-pack: justify;
+            justify-content: space-between;
+    height: 3.4rem;
+    padding: 1.4rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase; }
+  .contact-multiselect {
+    padding: 1.3rem 1.4rem;
+    font-size: 0.85rem; }
+  .contact-select {
+    width: 1.3rem;
+    line-height: 2.4; }
+  .contact-rightColumn {
+    width: 49%;
+    padding: 0 0.05rem 0 0.8rem; }
+  .contact-textareaLabel {
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: left;
+    margin-bottom: 0.6rem; }
+  .contact-textarea {
+    height: 16.8rem;
+    padding: 1rem;
+    box-sizing: inherit; }
+  .contact-buttonWrapper {
+    width: 100%;
+    margin: 2.5rem 0; } }
 
 @media (min-width: 910px) {
   .jumbo-photo {

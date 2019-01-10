@@ -34,11 +34,26 @@
 }
 
 //-------------input placeholder---------------------
-@mixin placeholder($color, $font){
-	&::-webkit-input-placeholder { color:$color; font-family:$font;}
-	&::-moz-placeholder { color:$color; font-family:$font;}
-	&:-ms-input-placeholder { color:$color; font-family:$font;}
-	&:-moz-placeholder { color:$color; font-family:$font;}
+@mixin placeholder($color: null, $font: null, $weight: null){
+	&::-webkit-input-placeholder { color:$color; font-family:$font; font-weight: $weight; }
+	&::-moz-placeholder { color:$color; font-family:$font; font-weight: $weight; }
+	&:-ms-input-placeholder { color:$color; font-family:$font; font-weight: $weight; }
+	&:-moz-placeholder { color:$color; font-family:$font; font-weight: $weight; }
+}
+
+@mixin focusPlaceholder($color: null, $weight: null) {
+	&:focus::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+		color: $color;
+		font-weight: $weight;
+	}
+	&:focus::-moz-placeholder { /* Firefox 19+ */
+		color: $color;
+		font-weight: $weight;
+	}
+	&:focus:-ms-input-placeholder { /* IE 10+ */
+		color: $color;
+		font-weight: $weight;
+	}
 }
 
 @mixin columns($count, $gap){
@@ -57,4 +72,25 @@
 @mixin beforeAfterDefaults {
 	content: '';
 	display: block;
+}
+
+@mixin listBullet($color, $position: null, $top: null, $left: null) {
+	&:before {
+		content: '';
+		display: inline-block;
+		width: .2rem;
+		height: .2rem;
+		position: $position;
+		top: $top;
+		left: $left;
+		border: 2px solid $color;
+		border-radius: 50%;
+		vertical-align: middle;
+	}
+}
+
+@mixin contactText {
+	font-size: 0.8rem;
+	font-weight: 500;
+	text-transform: uppercase;
 }

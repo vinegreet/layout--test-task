@@ -35,6 +35,7 @@ strong { font-weight: bold; }
 
 .jumbo-btn {
   @extend %purpleButton;
+	@include flex(flex-start);
   margin: 2rem auto 0;
   .icon {
     margin-right: 1rem;
@@ -120,21 +121,15 @@ strong { font-weight: bold; }
   li {
     position: relative;
     margin-left: 0.7rem;
-    &:before {
-      content: '';
-      display: inline-block;
-      width: .2rem;
-      height: .2rem;
-      position: absolute;
-      left: -1.7rem;
-      top: .4rem;
-      border: 2px solid $purple;
-      border-radius: 50%;
-    }
+    @include listBullet($purple, absolute, .4rem, -1.7rem);
   }
 }
 
 /* ====================== REVIEWS ====================== */
+
+.reviews {
+  margin-bottom: 3.5rem;
+}
 
 .reviews-header { @extend %sectionHeader; }
 
@@ -166,6 +161,18 @@ strong { font-weight: bold; }
   float: right;
   margin: 1rem 0 0 2rem;
   border-radius: 50%;
+}
+
+.reviews-videoContainer {
+  @include flex();
+  position: relative;
+  &:before {
+    @include beforeAfterDefaults();
+    @include sprite($ui-play-btn-dark-gray);
+    position: absolute;
+    top: 5rem;
+    left: 9rem;
+  }
 }
 
 .reviews-user {
@@ -201,7 +208,111 @@ strong { font-weight: bold; }
 
 .reviews-loadMore {
   display: block;
-  width: 10rem;
+  width: 9rem;
   margin: 1rem auto;
   @include flex(space-between);
+  font-size: 0.7rem;
+  font-weight: 900;
+  text-transform: uppercase;
 }
+
+/* ====================== CONTACT ====================== */
+
+.contact-header {
+  @extend %sectionHeader;
+  padding: 2.5rem 1.5rem;
+}
+
+.contact-title { @extend %sectionTitle; }
+
+.contact-innerContainer {
+  padding: 2rem;
+}
+
+.contact-input {
+  width: 100%;
+  margin-bottom: 1rem;
+  font: 700 0.9rem/1 'GothaPro', sans-serif;
+  text-transform: uppercase;
+  @include placeholder(null, null, 500);
+  border: {
+    color: $gray;
+    top: none;
+    right: none;
+    left: none;
+  }
+  background-image: none;
+  background-color: transparent;
+  box-shadow: none;
+  outline: none;
+}
+
+.contact-dropdown {
+  margin-top: 1rem;
+  border: 1px solid $gray;
+}
+
+.contact-dropdownHeader {
+  height: 2.5rem;
+  border-bottom: 1px solid $gray;
+  border-collapse: collapse;
+  // padding: 0.5rem 0.5rem 0.5rem 0;
+  @include flex();
+  &:after {
+    @include beforeAfterDefaults();
+    @include sprite($ui-arrow-down);
+    margin-left: 0.5rem;
+  }
+}
+
+.contact-multiselect {
+  padding: 1rem 0;
+}
+
+.contact-select {
+  display: inline-block;
+  width: 5%;
+  @include listBullet($gray);
+  &--checked {
+    &:before {
+      border-color: $purple;
+    }
+  }
+}
+
+.contact-selectInput {
+  display: none;
+}
+
+.contact-selectDefinition {
+  display: inline-block;
+  width: 90%;
+  &--checked {
+    color: $purple;
+  }
+}
+
+.contact-selectDefinitionBtn {
+  text-align: left;
+}
+
+.contact-textareaLabel {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.contact-textarea {
+  width: 100%;
+  resize: none;
+  border-color: $gray;
+  font-family: 'GothaPro';
+}
+
+.contact-buttonWrapper {
+  @include flex();
+}
+
+.contact-submitBtn {
+  @extend %purpleButton;
+}
+
