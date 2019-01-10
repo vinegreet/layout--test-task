@@ -164,7 +164,6 @@ strong { font-weight: bold; }
 }
 
 .reviews-videoContainer {
-  @include flex();
   position: relative;
   &:before {
     @include beforeAfterDefaults();

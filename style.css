@@ -585,12 +585,6 @@ strong {
   border-radius: 50%; }
 
 .reviews-videoContainer {
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-          align-items: center;
   position: relative; }
   .reviews-videoContainer:before {
     content: '';
@@ -922,7 +916,7 @@ strong {
     .reviews-item:hover .reviews-name {
       color: #a70c5d; }
     .reviews-item--video:before {
-      margin: -0.5rem -0.3rem 1rem; }
+      margin: -0.5rem 0 1rem; }
     .reviews-item--video .reviews-content {
       margin: 1.2rem 0.1rem 1rem; }
   .reviews-content {
