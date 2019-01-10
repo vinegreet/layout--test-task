@@ -165,7 +165,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
   border: 2px solid #a70c5d;
   border-radius: 4rem;
-  padding: 1rem;
+  padding: 0.7rem;
   width: 12rem;
   height: 3.3rem;
   font-size: .7rem;
@@ -190,7 +190,8 @@ h1, h2, h3, h4, h5, h6 {
   .services-innerContainer,
   .reviews-innerContainer,
   .contact-innerContainer {
-    max-width: 1140px;
+    max-width: 1680px;
+    /* Comment this out to switch from responsive to adaptive layout */
     margin: 0 auto; } }
 
 /*!
@@ -833,8 +834,8 @@ strong {
 
 @media (min-width: 768px) {
   html {
-    font-size: calc(0.65vh + 0.4vw);
-    font-size: 13.777px; }
+    font-size: calc(0.8vh + 0.45vw);
+    /* Comment this out to switch from responsive to adaptive layout */ }
   .header-inner,
   .jumbo-inner,
   .services-innerContainer {
@@ -998,7 +999,7 @@ strong {
     width: 30rem;
     margin-right: 7.1rem;
     z-index: 100;
-    background-image: url("assets/photo/jumbotron-bg_.jpg");
+    background-image: url("assets/photo/jumbotron-bg.jpg");
     background-size: cover; }
   .reviews-workplaceLink:hover {
     text-decoration: none; }

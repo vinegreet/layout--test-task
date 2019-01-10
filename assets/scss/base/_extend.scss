@@ -58,7 +58,7 @@
 	color: #fff;
 	border: 2px solid $purple;
 	border-radius: 4rem;
-  padding: 1rem;
+  padding: 0.7rem;
   width: 12rem;
   height: 3.3rem;
   font-size: .7rem;
@@ -82,10 +82,8 @@
 @media (min-width: 1280px) {
 
 	%sectionInner {
-		max-width: 1140px;
-		// max-width: 1680px;
-		// max-width: 1700px;
-		// width: 95%;
+		// max-width: 1140px; /* Uncomment this out to switch from responsive to adaptive layout */
+		max-width: 1680px; /* Comment this out to switch from responsive to adaptive layout */
 		margin: 0 auto;
 	}
 

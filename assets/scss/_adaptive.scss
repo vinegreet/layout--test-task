@@ -1,9 +1,7 @@
 @media (min-width: 768px) {
   html {
-    // font-size: calc(0.8vh + 0.45vw);
-    // font-size: calc(0.9vh + 0.51vw);
-    font-size: calc(0.65vh + 0.4vw);
-    font-size: 13.777px;
+    // font-size: 13.777px; /* Uncomment this out to switch from responsive to adaptive layout */
+    font-size: calc(0.8vh + 0.45vw); /* Comment this out to switch from responsive to adaptive layout */
   }
 
   .header-inner,
@@ -208,7 +206,7 @@
     margin-right: 7.1rem;
     z-index: 100;
     background: {
-      image: url('assets/photo/jumbotron-bg_.jpg');
+      image: url('assets/photo/jumbotron-bg.jpg');
       size: cover;
     }
   }
