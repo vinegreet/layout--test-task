@@ -53,3 +53,8 @@
 	flex-direction: $direction;
 	flex-wrap: $wrap;
 }
+
+@mixin beforeAfterDefaults {
+	content: '';
+	display: block;
+}

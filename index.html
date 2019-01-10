@@ -13,7 +13,7 @@
 	<header class="header">
 		<div class="header-inner">
 			<!-- <div class="header-logo"></div> -->
-			<button class="header-logoBtn btn"><img src="./assets/img/Logo.png" alt="Logo-Pravo-Agency" class="header-logo-img"></button>
+			<button class="header-logoBtn btn"><img src="./assets/img/Logo.png" alt="Logo-Pravo-Agency" class="header-logo-img" title="Наверх"></button>
 			<nav class="header-nav">
 				<!-- <div class="header-hamburger"></div> -->
 				<button class="header-hamburgerBtn btn">
@@ -53,7 +53,7 @@
 			<div class="jumbo-slider">
 				<div class="jumbo-inner">
 					<div class="jumbo-article">
-						<div class="jumbo-title">Правовое сопровождение малого ИТ-бизнеса</div>
+						<h1 class="jumbo-title">Правовое сопровождение малого ИТ-бизнеса</h1>
 						<div class="jumbo-divider"></div>
 						<div class="jumbo-text">
 							<p>Зачастую интернет-проекты, разработчики, маркетологи, дизайнеры, стартаперы и другие IT-специалисты не уделяют должного внимания правовым аспектам своей деятельности.</p>
@@ -141,48 +141,101 @@
 
 		<section class="reviews">
 			<div class="reviews-header">
-				<div class="reviews-title">Отзывы</div>
+				<h3 class="reviews-title">Отзывы</h3>
 				<div class="divider"></div>
 				<div class="reviews-subtitle">Мнение наших клиентов <strong>делает мир и нас лучше :)</strong></div>
 			</div>
 			<div class="reviews-innerContainer">
-				<div class="reviews-item">
-					<div class="reviews-content">Главная тема для меня – любовь. Мы все хотим ее, но не знаем как получить, поэтому все, что мы делаем, — это всего лишь попытки найти счастье.</div>
+				<button class="reviews-item btn">
+					<div class="reviews-content">
+						<p>Главная тема для меня – любовь. Мы все хотим ее, но не знаем как получить, поэтому все, что мы делаем, — это всего лишь попытки найти счастье.</p>
+						<img src="assets/photo/client1.jpg" alt="Avatar" class="reviews-avatar">
+					</div>
 					<div class="reviews-user">
 						<div class="reviews-name">Алексей Фёдоров</div>
 						<div class="reviews-job">
-							<div class="reviews-jobPosition">CEO</div>
+							<span class="reviews-jobPosition">CEO</span>
 							<a href="https://deco.agency/" class="reviews-workplaceLink" target="_blank">deco.agency</a>
 						</div>
 					</div>
-				</div>
-				<div class="reviews-item">
-					<div class="reviews-content">Главная тема для меня – любовь. Мы все хотим ее, но не знаем как получить, поэтому все, что мы делаем, — это всего лишь попытки найти счастье.</div>
+				</button>
+				<button class="reviews-item btn">
+					<div class="reviews-content">
+						<p>Главная тема для меня – любовь. Мы все хотим ее, но не знаем как получить, поэтому все, что мы делаем, — это всего лишь попытки найти счастье.</p>
+						<img src="assets/photo/client2.jpg" alt="Avatar" class="reviews-avatar">
+					</div>
 					<div class="reviews-user">
 						<div class="reviews-name">Артур Оруджалиев</div>
 						<div class="reviews-job">
-							<div class="reviews-jobPosition">CEO</div>
+							<span class="reviews-jobPosition">CEO</span>
 							<a href="https://ain.ua/" class="reviews-workplaceLink" target="_blank" rel="nofollow">AIN.ua</a>
 						</div>
 					</div>
-				</div>
-				<div class="reviews-item">
-					<div class="reviews-content"></div>
-					<div class="reviews-user">
+				</button>
+				<button class="reviews-item reviews-item--video btn">
+					<div class="reviews-content">
+						<div class="reviews-videoContainer">
+							<img src="assets/photo/video-preview.jpg" alt="">
+						</div>
+					</div>
+					<div class="reviews-user reviews-user--noAvatar">
 						<div class="reviews-name">Григорий Маленко</div>
 						<div class="reviews-job">
-							<div class="reviews-jobPosition">CEO</div>
+							<span class="reviews-jobPosition">CEO</span>
 							<a href="https://serm.ua/" class="reviews-workplaceLink" target="_blank" rel="nofollow">SERM.ua</a>
 						</div>
 					</div>
-				</div>
+				</button>
 			</div>
 			<button class="reviews-loadMore btn">
 				<i class="icon ui-reload"></i>
 				Загрузить еще
 			</button>
 		</section>
-		<section class="contacts"></section>
+
+		<section class="contact">
+				<!-- .contact-header>.contact-title+.divider^.contact-innerContainer>form.contact-form>.contact-leftColumn>(input.contact-input)*4+.contact-dropdown>.contact-dropdownHeader+dl.contact-multiselect>(dt.contact-select>input.contact-selectInput^dd.contact-selectDefinition>button.contact-selectDefinitionBtn)*4^^.contact-rightColumn>span.contact-textareaLabel+textarea.contact-textarea^.contact-buttonWrapper>button.contact-submitBtn -->
+			<div class="contact-header">
+				<h3 class="contact-title">Запрос на услуги</h3>
+				<div class="divider"></div>
+			</div>
+			<div class="contact-innerContainer">
+				<form action="/" class="contact-form">
+					<div class="contact-leftColumn">
+						<input type="text" class="contact-input" name="name" placeholder="Имя*" required="required">
+						<input type="text" class="contact-input" name="phone" placeholder="Телефон*" required="required">
+						<input type="text" class="contact-input" name="email" placeholder="E-mail*" required="required">
+						<input type="text" class="contact-input" name="website" placeholder="Сайт">
+						<div class="contact-dropdown">
+							<div class="contact-dropdownHeader">Меня интересует</div>
+							<dl class="contact-multiselect">
+								<dt class="contact-select"><input type="checkbox" class="contact-selectInput" name="order"></dt>
+								<dd class="contact-selectDefinition">
+									<button class="contact-selectDefinitionBtn btn">Наведение порядка в делах</button>
+								</dd>
+								<dt class="contact-select"><input type="checkbox" class="contact-selectInput" name="accompaniment"></dt>
+								<dd class="contact-selectDefinition">
+									<button class="contact-selectDefinitionBtn btn">Правовое сопровождение деятельности</button>
+								</dd>
+								<dt class="contact-select"><input type="checkbox" class="contact-selectInput" name="optimization"></dt>
+								<dd class="contact-selectDefinition">
+									<button class="contact-selectDefinitionBtn btn">Оптимизация договорных отношений</button>
+								</dd>
+								<dt class="contact-select"><input type="checkbox" class="contact-selectInput" name="contracts"></dt>
+								<dd class="contact-selectDefinition">
+									<button class="contact-selectDefinitionBtn btn">Разработка договоров</button>
+								</dd>
+							</dl>
+						</div>
+					</div>
+					<div class="contact-rightColumn">
+						<span class="contact-textareaLabel">Дополнительная информация</span>
+						<textarea name="additionaltext" id="" cols="30" rows="10" class="contact-textarea" placeholder="Введите текст..."></textarea>
+					</div>
+					<div class="contact-buttonWrapper"><button type="submit" class="contact-submitBtn btn" name="submit">Отправить</button></div>
+				</form>
+			</div>
+		</section>
 	</main>
 	
 	<footer class="footer"></footer>

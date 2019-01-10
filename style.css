@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
  * -------------------------------------
  * Theme Name: ______
@@ -184,7 +185,8 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (min-width: 1280px) {
   .header-inner,
-  .jumbo-inner, .services-innerContainer,
+  .jumbo-inner,
+  .services-innerContainer,
   .reviews-innerContainer {
     max-width: 1140px;
     margin: 0 auto; } }
@@ -459,7 +461,6 @@ strong {
 
 .services-item {
   width: 100%;
-  height: auto;
   padding: 2rem;
   text-align: left;
   position: relative; }
@@ -545,11 +546,64 @@ strong {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
           flex-direction: row;
-  flex-wrap: wrap;
-  padding: 1rem 5rem; }
+  flex-wrap: wrap; }
 
 .reviews-item {
-  width: 30%; }
+  width: 100%;
+  padding: 2rem;
+  text-align: left; }
+  .reviews-item:before {
+    content: '';
+    display: block;
+    background-image: url(assets/img/sprite.png);
+    background-position: -84px -69px;
+    width: 20px;
+    height: 15px;
+    margin: 0 auto 1rem; }
+  .reviews-item--video:before {
+    background-image: url(assets/img/sprite.png);
+    background-position: -30px -84px;
+    width: 25px;
+    height: 25px; }
+
+.reviews-avatar {
+  float: right;
+  margin: 1rem 0 0 2rem;
+  border-radius: 50%; }
+
+.reviews-user {
+  margin: 1.5rem 0 0;
+  float: right;
+  text-align: center; }
+  .reviews-user--noAvatar {
+    float: none;
+    margin: 1.5rem auto 0; }
+
+.reviews-name {
+  font-weight: bold; }
+
+.reviews-job {
+  margin-top: 1rem; }
+
+.reviews-jobPosition:after {
+  content: '•';
+  color: #a70c5d;
+  margin-left: 0.3rem; }
+
+.reviews-workplaceLink {
+  font-weight: bold;
+  text-decoration: underline; }
+
+.reviews-loadMore {
+  display: block;
+  width: 10rem;
+  margin: 1rem auto;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+          align-items: center; }
 
 .header {
   width: 100%;
@@ -584,7 +638,8 @@ strong {
   height: 70px; }
 
 .header-menuBtn {
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  white-space: nowrap; }
 
 .header-menu--desk {
   display: none; }
@@ -716,7 +771,40 @@ strong {
     position: absolute;
     top: 4.5rem;
     left: 7.5rem;
-    width: 68%; } }
+    width: 68%; }
+  /* ====================== REVIEWS ====================== */
+  .reviews-innerContainer {
+    padding: 0rem 1rem; }
+  .reviews-item {
+    width: 30%;
+    padding: 1.1rem 1.05rem; }
+    .reviews-item:before {
+      margin: 0 0 1rem; }
+    .reviews-item:hover:not(.reviews-item--video):before {
+      background-image: url(assets/img/sprite.png);
+      background-position: -104px -69px;
+      width: 20px;
+      height: 15px; }
+    .reviews-item:hover .reviews-name {
+      color: #a70c5d; }
+    .reviews-item--video:before {
+      margin: -0.5rem -0.3rem 1rem; }
+    .reviews-item--video .reviews-content {
+      margin: 1.2rem 0.1rem 1rem; }
+  .reviews-content {
+    margin: 1rem 0.1rem .7rem;
+    font-size: 1.1rem;
+    line-height: 1.55; }
+  .reviews-avatar {
+    float: none;
+    margin: 2.1rem 0 0; }
+  .reviews-user {
+    float: none;
+    text-align: left;
+    margin-top: .7rem;
+    font-size: 0.9rem; }
+  .reviews-loadMore {
+    margin-top: 3.9rem; } }
 
 @media (min-width: 910px) {
   .jumbo-photo {
@@ -724,11 +812,51 @@ strong {
     margin-right: 7.1rem;
     z-index: 100;
     background-image: url("assets/photo/jumbotron-bg_.jpg");
-    background-size: cover; } }
+    background-size: cover; }
+  .reviews-workplaceLink:hover {
+    text-decoration: none; }
+  .reviews-loadMore:hover .ui-reload {
+    -webkit-animation-name: rotate-right;
+            animation-name: rotate-right;
+    -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1; }
+  .ui-reload {
+    -webkit-animation-duration: 0.3s;
+            animation-duration: 0.3s;
+    -webkit-animation-name: rotate-left;
+            animation-name: rotate-left; }
+  @-webkit-keyframes rotate-right {
+    0% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg); }
+    100% {
+      -webkit-transform: rotate(180deg);
+              transform: rotate(180deg); } }
+  @keyframes rotate-right {
+    0% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg); }
+    100% {
+      -webkit-transform: rotate(180deg);
+              transform: rotate(180deg); } }
+  @-webkit-keyframes rotate-left {
+    0% {
+      -webkit-transform: rotate(180deg);
+              transform: rotate(180deg); }
+    100% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg); } }
+  @keyframes rotate-left {
+    0% {
+      -webkit-transform: rotate(180deg);
+              transform: rotate(180deg); }
+    100% {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg); } } }
 
 @media (min-width: 1280px) {
   .header-inner,
-  .jumbo-inner {
+  .jumbo {
     background-color: #f5f5f5; }
   .services-item {
     padding: 3rem 4rem 2rem 7.9rem; }
@@ -736,4 +864,6 @@ strong {
     left: 12.6rem;
     width: 59%; }
   .services-subtitle {
-    width: 33%; } }
+    width: 33%; }
+  .reviews-innerContainer {
+    padding: 0rem 4rem; } }

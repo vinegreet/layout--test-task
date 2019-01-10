@@ -67,17 +67,14 @@ strong { font-weight: bold; }
 
 .services-item {
   width: 100%;
-  // background-color: #ccc;
-  // @include flex(space-between, flex-start);
-  // align-content: flex-start;
-  height: auto;
   padding: 2rem;
-  // border-bottom: 1px dotted #000;
   text-align: left;
   position: relative;
+  // @include flex(space-between, flex-start);
+  // align-content: flex-start;
+  // border-bottom: 1px dotted #000; // ---------------- TODO: borders with wider gaps between dots ----------------
   &:before {
-    content: '';
-    display: block;
+    @include beforeAfterDefaults;
     margin: 0 auto 1rem;
   }
   @for $i from 1 to length($services-icons) + 1 {
@@ -103,8 +100,7 @@ strong { font-weight: bold; }
 .services-contentTitleWrapper {
   @include flex(space-between, flex-start);
   &:after {
-    content: '';
-    display: block;
+    @include beforeAfterDefaults;
     @include sprite($services-info);
   }
 }
@@ -148,24 +144,64 @@ strong { font-weight: bold; }
 
 .reviews-innerContainer {
   @include flex(space-between, flex-start, row, wrap);
-  padding: 1rem 5rem;
 }
 
 .reviews-item {
-  width: 30%;
+  width: 100%;
+  padding: 2rem;
+  text-align: left;
+  &:before {
+    @include beforeAfterDefaults;
+    @include sprite($ui-quotes-gray);
+    margin: 0 auto 1rem;
+  }
+  &--video {
+    &:before {
+      @include sprite($ui-youtube);
+    }
+  }
 }
 
-// .reviews-iconWrapper {}
+.reviews-avatar {
+  float: right;
+  margin: 1rem 0 0 2rem;
+  border-radius: 50%;
+}
 
-// .reviews-content {}
+.reviews-user {
+  margin: 1.5rem 0 0;
+  float: right;
+  text-align: center;
+  &--noAvatar {
+    float: none;
+    margin: 1.5rem auto 0;
+  }
+}
 
-// .reviews-user {}
+.reviews-name {
+  font-weight: bold;
+}
 
-// .reviews-name {}
+.reviews-job {
+  margin-top: 1rem;
+}
 
-// .reviews-job {}
+.reviews-jobPosition {
+  &:after {
+    content: '•';
+    color: $purple;
+    margin-left: 0.3rem;
+  }
+}
 
-// .reviews-jobPosition {}
+.reviews-workplaceLink {
+  font-weight: bold;
+  text-decoration: underline;
+}
 
-// .reviews-workplaceLink {}
-
+.reviews-loadMore {
+  display: block;
+  width: 10rem;
+  margin: 1rem auto;
+  @include flex(space-between);
+}
