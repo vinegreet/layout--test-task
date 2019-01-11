@@ -290,114 +290,6 @@ h1, h2, h3, h4, h5, h6 {
 .icon {
   display: inline-block; }
 
-.services-accompaniment {
-  background-image: url(assets/img/sprite.png);
-  background-position: -84px 0px;
-  width: 40px;
-  height: 39px; }
-
-.services-documentation {
-  background-image: url(assets/img/sprite.png);
-  background-position: 0px -42px;
-  width: 42px;
-  height: 42px; }
-
-.services-info-highlighted {
-  background-image: url(assets/img/sprite.png);
-  background-position: -84px -39px;
-  width: 30px;
-  height: 30px; }
-
-.services-info {
-  background-image: url(assets/img/sprite.png);
-  background-position: 0px -84px;
-  width: 30px;
-  height: 30px; }
-
-.services-optimization {
-  background-image: url(assets/img/sprite.png);
-  background-position: 0px 0px;
-  width: 42px;
-  height: 42px; }
-
-.services-order {
-  background-image: url(assets/img/sprite.png);
-  background-position: -42px -42px;
-  width: 40px;
-  height: 41px; }
-
-.sn-footer-facebook {
-  background-image: url(assets/img/sprite.png);
-  background-position: -136px -21px;
-  width: 5px;
-  height: 12px; }
-
-.sn-footer-linkedin {
-  background-image: url(assets/img/sprite.png);
-  background-position: -124px -52px;
-  width: 12px;
-  height: 13px; }
-
-.sn-footer-twitter {
-  background-image: url(assets/img/sprite.png);
-  background-position: -124px -41px;
-  width: 15px;
-  height: 11px; }
-
-.ui-arrowDown {
-  background-image: url(assets/img/sprite.png);
-  background-position: -77px -84px;
-  width: 22px;
-  height: 22px; }
-
-.ui-arrowUp {
-  background-image: url(assets/img/sprite.png);
-  background-position: -55px -84px;
-  width: 22px;
-  height: 22px; }
-
-.ui-pauseBtn-purple {
-  background-image: url(assets/img/sprite.png);
-  background-position: -124px -21px;
-  width: 12px;
-  height: 20px; }
-
-.ui-playBtn-darkGray {
-  background-image: url(assets/img/sprite.png);
-  background-position: -42px 0px;
-  width: 42px;
-  height: 42px; }
-
-.ui-playBtn-purple {
-  background-image: url(assets/img/sprite.png);
-  background-position: -124px 0px;
-  width: 17px;
-  height: 21px; }
-
-.ui-quotes-gray {
-  background-image: url(assets/img/sprite.png);
-  background-position: -84px -69px;
-  width: 20px;
-  height: 15px; }
-
-.ui-quotes-red {
-  background-image: url(assets/img/sprite.png);
-  background-position: -104px -69px;
-  width: 20px;
-  height: 15px; }
-
-.ui-reload {
-  background-image: url(assets/img/sprite.png);
-  background-position: -99px -84px;
-  width: 23px;
-  height: 20px; }
-
-.ui-youtube {
-  background-image: url(assets/img/sprite.png);
-  background-position: -30px -84px;
-  width: 25px;
-  height: 25px; }
-
 html {
   height: 100%;
   font-size: 16px;
@@ -436,7 +328,13 @@ strong {
   -webkit-box-align: center;
           align-items: center;
   margin: 2rem auto 0; }
-  .jumbo-btn .icon {
+  .jumbo-btn:before {
+    content: '';
+    display: block;
+    background-image: url(assets/img/sprite.png);
+    background-position: -77px -84px;
+    width: 22px;
+    height: 22px;
     margin-right: 1rem; }
 
 .jumbo-playBtn {
@@ -454,6 +352,18 @@ strong {
   background-color: #dfdfe2;
   border-radius: 50%;
   z-index: 110; }
+  .jumbo-playBtn:before {
+    content: '';
+    display: block;
+    background-image: url(assets/img/sprite.png);
+    background-position: -124px 0px;
+    width: 17px;
+    height: 21px; }
+  .jumbo-playBtn--paused:before {
+    background-image: url(assets/img/sprite.png);
+    background-position: -124px -21px;
+    width: 12px;
+    height: 20px; }
 
 /* ====================== SERVICES ====================== */
 .services-innerContainer {
@@ -463,9 +373,6 @@ strong {
           justify-content: space-between;
   -webkit-box-align: start;
           align-items: flex-start;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-          flex-direction: row;
   flex-wrap: wrap; }
 
 .services-item {
@@ -556,9 +463,6 @@ strong {
           justify-content: space-between;
   -webkit-box-align: start;
           align-items: flex-start;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-          flex-direction: row;
   flex-wrap: wrap; }
 
 .reviews-item {
@@ -633,6 +537,13 @@ strong {
   font-size: 0.7rem;
   font-weight: 900;
   text-transform: uppercase; }
+  .reviews-loadMore:before {
+    content: '';
+    display: block;
+    background-image: url(assets/img/sprite.png);
+    background-position: -99px -84px;
+    width: 23px;
+    height: 20px; }
 
 /* ====================== CONTACT ====================== */
 .contact-header {
@@ -640,6 +551,9 @@ strong {
 
 .contact-innerContainer {
   padding: 2rem; }
+
+.contact-leftColumn {
+  margin-bottom: 2rem; }
 
 .contact-input {
   width: 100%;
@@ -665,33 +579,48 @@ strong {
 
 .contact-dropdown {
   margin-top: 1rem;
-  border: 1px solid #dfdfe2; }
+  border: 1px solid #dfdfe2;
+  overflow: hidden;
+  min-height: 2.5rem;
+  -webkit-transition: all .7s ease;
+  transition: all .7s ease; }
+  .contact-dropdown--squeezed .contact-dropdownHeader:after {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg); }
 
 .contact-dropdownHeader {
+  width: 100%;
   height: 2.5rem;
   border-bottom: 1px solid #dfdfe2;
-  border-collapse: collapse;
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: center;
           justify-content: center;
   -webkit-box-align: center;
-          align-items: center; }
+          align-items: center;
+  z-index: 101;
+  background-color: #fff;
+  position: relative; }
   .contact-dropdownHeader:after {
     content: '';
     display: block;
     background-image: url(assets/img/sprite.png);
-    background-position: -77px -84px;
+    background-position: -55px -84px;
     width: 22px;
     height: 22px;
     margin-left: 0.5rem; }
 
 .contact-multiselect {
-  padding: 1rem 0; }
+  padding: 1rem;
+  overflow: hidden;
+  -webkit-transition: all .7s ease;
+  transition: all .7s ease;
+  z-index: 100; }
 
 .contact-select {
   display: inline-block;
-  width: 5%; }
+  width: 5%;
+  line-height: 1.4; }
   .contact-select:before {
     content: '';
     display: inline-block;
@@ -708,7 +637,8 @@ strong {
 
 .contact-selectDefinition {
   display: inline-block;
-  width: 90%; }
+  width: 90%;
+  line-height: 1.4; }
   .contact-selectDefinition--checked {
     color: #a70c5d; }
 
@@ -721,6 +651,8 @@ strong {
 
 .contact-textarea {
   width: 100%;
+  padding: 1rem;
+  box-sizing: inherit;
   resize: none;
   border-color: #dfdfe2;
   font-family: 'GothaPro'; }
@@ -731,7 +663,8 @@ strong {
   -webkit-box-pack: center;
           justify-content: center;
   -webkit-box-align: center;
-          align-items: center; }
+          align-items: center;
+  margin: 2.5rem 0; }
 
 .header {
   width: 100%;
@@ -821,7 +754,7 @@ strong {
   transition: all 0.25s ease; }
   .header-toggleCircle:before {
     content: 'UA';
-    right: 25px; }
+    right: 30px; }
   .header-toggleCircle:after {
     content: 'RU';
     right: -27px; }
@@ -950,18 +883,20 @@ strong {
     padding-left: .1rem; }
   .contact-leftColumn {
     width: 47.4%;
-    padding-top: 0.15rem; }
+    padding-top: 0.15rem;
+    margin-bottom: 0; }
   .contact-input {
     font-size: 0.8rem;
     height: 2.1rem;
     border-width: 1px; }
   .contact-dropdown {
-    margin-top: 2.1rem; }
+    margin-top: 2.1rem;
+    min-height: 3.4rem; }
   .contact-dropdownHeader {
     -webkit-box-pack: justify;
             justify-content: space-between;
     height: 3.4rem;
-    padding: 1.4rem;
+    padding: 0 1.4rem;
     font-size: 0.8rem;
     font-weight: 500;
     text-transform: uppercase; }
@@ -980,12 +915,9 @@ strong {
     text-align: left;
     margin-bottom: 0.6rem; }
   .contact-textarea {
-    height: 16.8rem;
-    padding: 1rem;
-    box-sizing: inherit; }
+    height: 16.8rem; }
   .contact-buttonWrapper {
-    width: 100%;
-    margin: 2.5rem 0; } }
+    width: 100%; } }
 
 @media (min-width: 910px) {
   .jumbo-photo {
@@ -996,16 +928,16 @@ strong {
     background-size: cover; }
   .reviews-workplaceLink:hover {
     text-decoration: none; }
-  .reviews-loadMore:hover .ui-reload {
-    -webkit-animation-name: rotate-right;
-            animation-name: rotate-right;
-    -webkit-animation-iteration-count: 1;
-            animation-iteration-count: 1; }
-  .ui-reload {
+  .reviews-loadMore:before {
     -webkit-animation-duration: 0.3s;
             animation-duration: 0.3s;
     -webkit-animation-name: rotate-left;
             animation-name: rotate-left; }
+  .reviews-loadMore:hover:before {
+    -webkit-animation-name: rotate-right;
+            animation-name: rotate-right;
+    -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1; }
   @-webkit-keyframes rotate-right {
     0% {
       -webkit-transform: rotate(0deg);

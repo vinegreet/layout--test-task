@@ -145,6 +145,7 @@
   .contact-leftColumn {
     width: 47.4%;
     padding-top: 0.15rem;
+    margin-bottom: 0;
   }
   
   .contact-input {
@@ -155,12 +156,13 @@
 
   .contact-dropdown {
     margin-top: 2.1rem;
+    min-height: 3.4rem;
   }
 
   .contact-dropdownHeader {
     justify-content: space-between;
     height: 3.4rem;
-    padding: 1.4rem;
+    padding: 0 1.4rem;
     @include contactText();
   }
 
@@ -186,13 +188,10 @@
 
   .contact-textarea {
     height: 16.8rem;
-    padding: 1rem;
-    box-sizing: inherit;
   }
 
   .contact-buttonWrapper {
     width: 100%;
-    margin: 2.5rem 0;
   }
   
 }
@@ -201,7 +200,6 @@
 
   .jumbo-photo {
     width: 30rem;
-    // margin-right: 2.7rem;
     margin-right: 7.1rem;
     z-index: 100;
     background: {
@@ -217,17 +215,16 @@
   }
 
   .reviews-loadMore {
+    &:before {
+      animation-duration: 0.3s;
+      animation-name: rotate-left;
+    }
     &:hover {
-      .ui-reload {
+      &:before {
         animation-name: rotate-right;
         animation-iteration-count: 1;
       }
     }
-  }
-
-  .ui-reload {
-    animation-duration: 0.3s;
-    animation-name: rotate-left;
   }
 
   @keyframes rotate-right {
@@ -267,7 +264,6 @@
   }
   
   .services-subtitle {
-    // width: 38.6rem;
     width: 33%;
   }
 

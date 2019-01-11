@@ -37,7 +37,9 @@ strong { font-weight: bold; }
   @extend %purpleButton;
 	@include flex(flex-start);
   margin: 2rem auto 0;
-  .icon {
+  &:before {
+    @include beforeAfterDefaults();
+    @include sprite($ui-arrow-down);
     margin-right: 1rem;
   }
 }
@@ -52,6 +54,15 @@ strong { font-weight: bold; }
   background-color: $gray;
   border-radius: 50%;
   z-index: 110;
+  &:before {
+    @include beforeAfterDefaults();
+    @include sprite($ui-play-btn-purple);
+  }
+  &--paused {
+    &:before {
+      @include sprite($ui-pause-btn-purple);
+    }
+  }
 }
 
 /* ====================== SERVICES ====================== */
@@ -63,7 +74,7 @@ strong { font-weight: bold; }
 .services-subtitle { @extend %sectionSubtitle; }
 
 .services-innerContainer {
-  @include flex(space-between, flex-start, row, wrap);
+  @include flex(space-between, flex-start, null, wrap);
 }
 
 .services-item {
@@ -71,8 +82,6 @@ strong { font-weight: bold; }
   padding: 2rem;
   text-align: left;
   position: relative;
-  // @include flex(space-between, flex-start);
-  // align-content: flex-start;
   // border-bottom: 1px dotted #000; // ---------------- TODO: borders with wider gaps between dots ----------------
   &:before {
     @include beforeAfterDefaults;
@@ -138,7 +147,7 @@ strong { font-weight: bold; }
 .reviews-subtitle { @extend %sectionSubtitle; }
 
 .reviews-innerContainer {
-  @include flex(space-between, flex-start, row, wrap);
+  @include flex(space-between, flex-start, null, wrap);
 }
 
 .reviews-item {
@@ -213,6 +222,10 @@ strong { font-weight: bold; }
   font-size: 0.7rem;
   font-weight: 900;
   text-transform: uppercase;
+  &:before {
+    @include beforeAfterDefaults();
+    @include sprite($ui-reload);
+  }
 }
 
 /* ====================== CONTACT ====================== */
@@ -226,6 +239,10 @@ strong { font-weight: bold; }
 
 .contact-innerContainer {
   padding: 2rem;
+}
+
+.contact-leftColumn {
+  margin-bottom: 2rem;
 }
 
 .contact-input {
@@ -249,28 +266,44 @@ strong { font-weight: bold; }
 .contact-dropdown {
   margin-top: 1rem;
   border: 1px solid $gray;
+  overflow: hidden;
+  min-height: 2.5rem;
+  transition: all .7s ease;
+  &--squeezed {
+    .contact-dropdownHeader {
+      &:after {
+        transform: rotate(180deg);
+      }
+    }
+  }
 }
 
 .contact-dropdownHeader {
+  width: 100%;
   height: 2.5rem;
   border-bottom: 1px solid $gray;
-  border-collapse: collapse;
-  // padding: 0.5rem 0.5rem 0.5rem 0;
   @include flex();
+  z-index: 101;
+  background-color: #fff;
+  position: relative;
   &:after {
     @include beforeAfterDefaults();
-    @include sprite($ui-arrow-down);
+    @include sprite($ui-arrow-up);
     margin-left: 0.5rem;
   }
 }
 
 .contact-multiselect {
-  padding: 1rem 0;
+  padding: 1rem;
+  overflow: hidden;
+  transition: all .7s ease;
+  z-index: 100;
 }
 
 .contact-select {
   display: inline-block;
   width: 5%;
+  line-height: 1.4;
   @include listBullet($gray);
   &--checked {
     &:before {
@@ -286,6 +319,7 @@ strong { font-weight: bold; }
 .contact-selectDefinition {
   display: inline-block;
   width: 90%;
+  line-height: 1.4;
   &--checked {
     color: $purple;
   }
@@ -302,6 +336,8 @@ strong { font-weight: bold; }
 
 .contact-textarea {
   width: 100%;
+  padding: 1rem;
+  box-sizing: inherit;
   resize: none;
   border-color: $gray;
   font-family: 'GothaPro';
@@ -309,6 +345,7 @@ strong { font-weight: bold; }
 
 .contact-buttonWrapper {
   @include flex();
+  margin: 2.5rem 0;
 }
 
 .contact-submitBtn {
