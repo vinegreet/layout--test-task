@@ -41,6 +41,7 @@ strong { font-weight: bold; }
     @include beforeAfterDefaults();
     @include sprite($ui-arrow-down);
     margin-right: 1rem;
+    transition: all $duration ease;
   }
 }
 

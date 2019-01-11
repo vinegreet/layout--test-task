@@ -335,7 +335,9 @@ strong {
     background-position: -77px -84px;
     width: 22px;
     height: 22px;
-    margin-right: 1rem; }
+    margin-right: 1rem;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease; }
 
 .jumbo-playBtn {
   display: -webkit-box;
@@ -817,6 +819,9 @@ strong {
     width: 30rem; }
   .jumbo-btn {
     margin-left: 0; }
+    .jumbo-btn:hover:before {
+      -webkit-filter: invert(0.7);
+              filter: invert(0.7); }
   /* ====================== SERVICES ====================== */
   .services-subtitle {
     width: 56%; }
