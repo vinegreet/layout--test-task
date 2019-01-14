@@ -38,8 +38,7 @@ strong { font-weight: bold; }
 	@include flex(flex-start);
   margin: 2rem auto 0;
   &:before {
-    @include beforeAfterDefaults();
-    @include sprite($ui-arrow-down);
+    @include icon($ui-arrow-down);
     margin-right: 1rem;
     transition: all $duration ease;
   }
@@ -56,8 +55,7 @@ strong { font-weight: bold; }
   border-radius: 50%;
   z-index: 110;
   &:before {
-    @include beforeAfterDefaults();
-    @include sprite($ui-play-btn-purple);
+    @include icon($ui-play-btn-purple);
   }
   &--paused {
     &:before {
@@ -83,7 +81,7 @@ strong { font-weight: bold; }
   padding: 2rem;
   text-align: left;
   position: relative;
-  // border-bottom: 1px dotted #000; // ---------------- TODO: borders with wider gaps between dots ----------------
+  // border: 1px dotted #000; // ---------------- TODO: borders with wider gaps between dots ----------------
   &:before {
     @include beforeAfterDefaults;
     margin: 0 auto 1rem;
@@ -111,16 +109,13 @@ strong { font-weight: bold; }
 .services-contentTitleWrapper {
   @include flex(space-between, flex-start);
   &:after {
-    @include beforeAfterDefaults;
-    @include sprite($services-info);
+    @include icon($services-info);
   }
 }
 
 .services-contentTitle {
+  @extend %servicesContentTitle;
   width: 88%;
-  font-weight: 700;
-  text-transform: uppercase;
-  line-height: 1.3;
   margin-bottom: 1.5rem;
 }
 
@@ -133,6 +128,102 @@ strong { font-weight: bold; }
     margin-left: 0.7rem;
     @include listBullet($purple, absolute, .4rem, -1.7rem);
   }
+}
+
+/* ================== Services - Modal ================== */
+
+.services-modal {
+  @include flex(null, flex-start, row, wrap);
+  align-content: flex-start;
+  width: 100%;
+  background-color: #fff;
+  position: relative;
+  padding: 2rem 2rem 0 2rem;
+  font-size: .87rem;
+  &:before {
+    @include modalBeforeAfter();
+    top: -92px;
+    left: 1.8rem;
+    transform: rotate(270deg) translateY(50%);
+  }
+}
+
+.modal-servicesContainer {
+  @include flex(space-between, flex-start);
+}
+
+.modal-pricesContainer {
+  @include flex(space-between, flex-start);
+}
+
+.modal-serviceLeftTitle,
+.modal-priceLeftTitle {
+  width: 17.5%;
+  @include contactFont();
+  font-size: .7rem;
+}
+
+.modal-serviceLeftTitle {
+  height: $modalTitleHeight;
+  @include flex(null, flex-end);
+  padding-bottom: 0.3rem;
+}
+
+.modal-title,
+.modal-pricesAndButtonContainer {
+  width: 82.5%;
+}
+
+.modal-title {
+  @extend %servicesContentTitle;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  height: $modalTitleHeight;
+}
+
+.modal-text {
+  width: 100%;
+  padding: 0 0.9rem 0 3.8rem;
+  line-height: 1.6;
+  margin-bottom: 0.7rem;
+  p {
+    margin-bottom: 1.3rem;
+  }
+}
+
+.modal-pricesContainer {
+  width: 96%;
+  margin-bottom: 2.3rem;
+}
+
+.modal-workersQuantity {
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+}
+
+.modal-workers {
+  font-size: .73rem;
+  margin-bottom: 1.4rem;
+}
+
+.modal-priceWrapper {
+  font-size: .73rem;
+}
+
+.modal-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.modal-currency {
+  font-weight: bold;
+}
+
+.modal-orderBtn {
+  @extend %purpleButton;
+  width: 8.7rem;
+  height: 3rem;
+  margin-bottom: 2rem;
 }
 
 /* ====================== REVIEWS ====================== */
@@ -156,8 +247,7 @@ strong { font-weight: bold; }
   padding: 2rem;
   text-align: left;
   &:before {
-    @include beforeAfterDefaults;
-    @include sprite($ui-quotes-gray);
+    @include icon($ui-quotes-gray);
     margin: 0 auto 1rem;
   }
   &--video {
@@ -176,8 +266,7 @@ strong { font-weight: bold; }
 .reviews-videoContainer {
   position: relative;
   &:before {
-    @include beforeAfterDefaults();
-    @include sprite($ui-play-btn-dark-gray);
+    @include icon($ui-play-btn-dark-gray);
     position: absolute;
     top: 5rem;
     left: 9rem;
@@ -212,7 +301,7 @@ strong { font-weight: bold; }
 
 .reviews-workplaceLink {
   font-weight: bold;
-  text-decoration: underline;
+  @include linkUnderline;
 }
 
 .reviews-loadMore {
@@ -224,8 +313,7 @@ strong { font-weight: bold; }
   font-weight: 900;
   text-transform: uppercase;
   &:before {
-    @include beforeAfterDefaults();
-    @include sprite($ui-reload);
+    @include icon($ui-reload);
   }
 }
 
@@ -288,8 +376,7 @@ strong { font-weight: bold; }
   background-color: #fff;
   position: relative;
   &:after {
-    @include beforeAfterDefaults();
-    @include sprite($ui-arrow-up);
+    @include icon($ui-arrow-up);
     margin-left: 0.5rem;
   }
 }
@@ -311,6 +398,12 @@ strong { font-weight: bold; }
       border-color: $purple;
     }
   }
+  &:hover,
+  &--hover, {
+    &:not(.contact-select--checked):before {
+      border-color: darken($gray, 10%);
+    }
+  }
 }
 
 .contact-selectInput {
@@ -321,8 +414,13 @@ strong { font-weight: bold; }
   display: inline-block;
   width: 90%;
   line-height: 1.4;
-  &--checked {
+  &--checked,
+  &--hover,
+  &:hover {
     color: $purple;
+  }
+  &--checked {
+    font-weight: bold;
   }
 }
 
@@ -352,4 +450,3 @@ strong { font-weight: bold; }
 .contact-submitBtn {
   @extend %purpleButton;
 }
-

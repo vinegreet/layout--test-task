@@ -69,10 +69,14 @@
     width: 56%;
   }
 
+  .services-innerContainer {
+    padding-left: 2rem;
+  }
+
   .services-item {
     width: 50%;
-    height: 18.2rem;
-    padding: 3rem 4rem 2rem 2rem;
+    height: $services-item-height;
+    padding: 0;
     &:before {
       position: absolute;
       top: 4rem;
@@ -87,10 +91,40 @@
     width: 68%;
   }
 
+  /* ================== Services - Modal ================== */
+
+  .services-modal {
+    width: 50%;
+    height: $services-item-height * 2 + 1rem;
+    padding: 4.5rem 5rem 0 5.2rem;
+    &:nth-child(odd):before {
+      @include modalBeforeAfter();
+      left: -7px;
+      transform: scaleX(-1);
+    }
+    &:nth-child(even) {
+      &:after {
+        @include modalBeforeAfter();
+        right: calc(-7px + 2rem);
+      }
+      &:before {
+        content: none;
+      }
+    }
+  }
+
+  .modal-text {
+    padding: 0 0.9rem 0 5.4rem;
+  }
+
+  .modal-orderBtn {
+    // margin-bottom: 0;
+  }
+
   /* ====================== REVIEWS ====================== */
 
   .reviews-innerContainer {
-    padding: 0rem 1rem;
+    padding: 0rem 2rem;
   }
 
   .reviews-item {
@@ -139,7 +173,6 @@
 
   .contact-innerContainer {
     padding: 2rem 14.5rem;
-    vertical-align: middle;
   }
 
   .contact-form {
@@ -168,7 +201,7 @@
     justify-content: space-between;
     height: 3.4rem;
     padding: 0 1.4rem;
-    @include contactText();
+    @include contactFont();
   }
 
   .contact-multiselect {
@@ -186,7 +219,7 @@
   }
 
   .contact-textareaLabel {
-    @include contactText();
+    @include contactFont();
     text-align: left;
     margin-bottom: 0.6rem;
   }
@@ -210,12 +243,6 @@
     background: {
       image: url('assets/photo/jumbotron-bg.jpg');
       size: cover;
-    }
-  }
-
-  .reviews-workplaceLink {
-    &:hover {
-      text-decoration: none;
     }
   }
 
@@ -250,7 +277,8 @@
   .jumbo-inner,
   .services-innerContainer,
   .reviews-innerContainer,
-  .contact-innerContainer {
+  .contact-innerContainer,
+  .footer {
     @extend %sectionInner;
   }
 
@@ -259,8 +287,8 @@
     background-color: $jumbotronWhite;
   }
 
-  .services-item {
-    padding: 3rem 4rem 2rem 7.9rem;
+  .services-item:before {
+    left: 7.9rem;
   }
   
   .services-contentWrapper {
@@ -274,6 +302,10 @@
 
   .reviews-innerContainer {
     padding: 0rem 4rem;
+  }
+
+  .services-modal {
+    max-width: 570px;
   }
 
 }

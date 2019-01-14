@@ -83,14 +83,33 @@
 		position: $position;
 		top: $top;
 		left: $left;
-		border: 2px solid $color;
+		border: .15rem solid $color;
 		border-radius: 50%;
 		vertical-align: middle;
 	}
 }
 
-@mixin contactText {
+@mixin contactFont {
 	font-size: 0.8rem;
 	font-weight: 500;
 	text-transform: uppercase;
+}
+
+@mixin modalBeforeAfter {
+	@include beforeAfterDefaults();
+	@include sprite($ui-tether-border);
+	position: absolute;
+	top: 2.3rem;
+}
+
+@mixin icon($icon) {
+	@include beforeAfterDefaults();
+	@include sprite($icon);
+}
+
+@mixin linkUnderline {
+	text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
 }

@@ -1,0 +1,69 @@
+
+
+/* ====================== FOOTER ====================== */
+
+.footer {}
+
+.footer-addressContainer {
+  @include flex(center, null, column);
+  text-align: center;
+  font-size: 1.15rem;
+}
+
+.footer-title {
+  @include contactFont;
+  font-size: .7rem;
+  font-weight: 900;
+  margin-bottom: 1.6rem;
+}
+
+.footer-addressText {
+  p {
+    margin-bottom: 0.9rem;
+  }
+}
+
+.footer-emailLink {
+  @include linkUnderline;
+  color: $purple;
+  margin-bottom: 1.7rem;
+}
+
+.footer-socialNetworks {
+  @include flex();
+  margin-bottom: 1.8rem;
+}
+
+.footer-facebookBtn {
+  @extend %socialNetworksButton;
+  &:hover {
+    border-color: #4267b2;
+    svg { fill: #4267b2; }
+  }
+}
+
+.footer-twitterBtn {
+  @extend %socialNetworksButton;
+  svg {
+    width: 0.9rem;
+    height: 0.9rem;
+  }
+  &:hover {
+    border-color: #38A1F3;
+    svg { fill: #38A1F3; }
+  }
+}
+
+.footer-linkedinBtn {
+  @extend %socialNetworksButton;
+  &:hover {
+    border-color: #0077B5;
+    svg { fill: #0077B5; }
+  }
+}
+
+.footer-copyright {
+  text-align: center;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
