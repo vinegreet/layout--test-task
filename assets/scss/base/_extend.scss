@@ -76,13 +76,15 @@
   @include flex();
   width: 2.8rem;
   height: 2.8rem;
-  border-radius: 50%;
-  border: 2px solid $gray;
+  border: {
+    width: 2px;
+    style: solid;
+    radius: 50%;
+  }
   margin: 0 0.2rem;
   svg {
     width: 0.8rem;
     height: 0.8rem;
-    fill: $gray;
   }
 }
 

@@ -113,3 +113,8 @@
     text-decoration: none;
   }
 }
+
+@mixin socialNetworksDesktopColor {
+  border-color: $gray;
+  svg { fill: $gray; }
+}

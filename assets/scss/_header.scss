@@ -8,7 +8,8 @@
   z-index: 120;
   &--shadow {
     box-shadow: 0 0 10px 0 rgb(165, 164, 164);
-    border-bottom: 5px solid $jumbotronWhite;
+    height: 71px;
+    .header-inner { height: 71px; }
   }
 }
 
@@ -19,6 +20,7 @@
   @include flex(space-between);
   z-index: 102;
   position: relative;
+  transition: all .15s ease;
 }
 
 .header-logoBtn {
@@ -33,6 +35,9 @@
 .header-menuBtn {
   text-transform: uppercase;
   white-space: nowrap;
+  &--active {
+    color: $purple;
+  }
 }
 
 .header-menu--desk {

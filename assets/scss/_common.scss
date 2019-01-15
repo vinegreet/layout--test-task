@@ -12,6 +12,13 @@ strong { font-weight: bold; }
 
 .main { margin-top: $headerHeight; }
 
+.services-header,
+.services,
+.reviews,
+.contact {
+  border-bottom: 1px solid $gray;
+}
+
 /* ====================== JUMBOTRON ====================== */
 
 .jumbo-article { padding: 3rem; }
@@ -74,6 +81,7 @@ strong { font-weight: bold; }
 
 .services-innerContainer {
   @include flex(space-between, flex-start, null, wrap);
+  padding-bottom: 2rem;
 }
 
 .services-item {
@@ -81,7 +89,6 @@ strong { font-weight: bold; }
   padding: 2rem;
   text-align: left;
   position: relative;
-  // border: 1px dotted #000; // ---------------- TODO: borders with wider gaps between dots ----------------
   &:before {
     @include beforeAfterDefaults;
     margin: 0 auto 1rem;
@@ -93,14 +100,18 @@ strong { font-weight: bold; }
       }
     }
   }
-  &:nth-child(2) {
-    &:before { filter: grayscale(1) brightness(3.1); } // ---------------- Temporary ----------------
-  }
   &:hover,
   &--active {
+    @for $i from 1 to length($services-icons-active) + 1 {
+      &:nth-child(#{$i}) {
+        &:before {
+          @include sprite-position(nth($services-icons-active, $i));
+        }
+      }
+    }
     .services-contentTitleWrapper {
       &:after { 
-        @include sprite-position($services-info-highlighted);
+        @include sprite-position($services-info-active);
       }
     }
   }
@@ -229,7 +240,7 @@ strong { font-weight: bold; }
 /* ====================== REVIEWS ====================== */
 
 .reviews {
-  margin-bottom: 3.5rem;
+  padding-bottom: 3.5rem;
 }
 
 .reviews-header { @extend %sectionHeader; }
@@ -247,7 +258,7 @@ strong { font-weight: bold; }
   padding: 2rem;
   text-align: left;
   &:before {
-    @include icon($ui-quotes-gray);
+    @include icon($ui-quotes);
     margin: 0 auto 1rem;
   }
   &--video {
@@ -264,13 +275,16 @@ strong { font-weight: bold; }
 }
 
 .reviews-videoContainer {
-  position: relative;
-  &:before {
-    @include icon($ui-play-btn-dark-gray);
-    position: absolute;
-    top: 5rem;
-    left: 9rem;
-  }
+  @include flex;
+  min-height: 14rem;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-image: url('assets/photo/video-preview.jpg');
+}
+
+.reviews-playBtn {
+  @include sprite($ui-play-btn-dark-gray);
 }
 
 .reviews-user {
@@ -327,7 +341,7 @@ strong { font-weight: bold; }
 .contact-title { @extend %sectionTitle; }
 
 .contact-innerContainer {
-  padding: 2rem;
+  padding: 2rem 2rem 0;
 }
 
 .contact-leftColumn {
@@ -340,6 +354,7 @@ strong { font-weight: bold; }
   font: 700 0.9rem/1 'GothaPro', sans-serif;
   text-transform: uppercase;
   @include placeholder(null, null, 500);
+  @include focusPlaceholder(darken($gray, 10%));
   border: {
     color: $gray;
     top: none;
@@ -434,12 +449,15 @@ strong { font-weight: bold; }
 }
 
 .contact-textarea {
+  @include placeholder(null, null, 400);
+  @include focusPlaceholder(darken($gray, 10%));
   width: 100%;
   padding: 1rem;
   box-sizing: inherit;
   resize: none;
   border-color: $gray;
   font-family: 'GothaPro';
+  font-weight: 500;
 }
 
 .contact-buttonWrapper {
