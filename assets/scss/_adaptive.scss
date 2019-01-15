@@ -10,6 +10,11 @@
     width: 100%;
   }
 
+  .header-inner,
+  .jumbo {
+    background-color: $jumbotronWhite;
+  }
+
   .header--shadow {
     .header-inner { padding-top: 0; }
   }
@@ -352,11 +357,6 @@
   .contact-innerContainer,
   .footer {
     @extend %sectionInner;
-  }
-
-  .header-inner,
-  .jumbo {
-    background-color: $jumbotronWhite;
   }
 
   .services-item:before {
