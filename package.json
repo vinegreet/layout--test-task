@@ -14,7 +14,7 @@
     "gulp-sass": "^4.0.2",
     "gulp.spritesmith": "^6.9.0",
     "lodash.mergewith": "^4.6.2",
-    "node-sass": "^4.11.0"
+    "node-sass": "^7.0.0"
   },
   "browserslist": [
     "last 4 version",
